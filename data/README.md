@@ -44,6 +44,15 @@ Conflict Termination Dataset*. Journal of Peace Research, 47(2), 243–250.
    partielles 1946–1949 et 2020–2023.
 6. Calcul des parts dans chaque période et production du graphique.
 
+### Filtre optionnel `--wars-only`
+
+Après la sélection des terminaisons, conserver uniquement les épisodes dont
+au moins une ligne annuelle porte `intensity_level == 2`. Ce code signifie
+**au moins 1 000 morts liés aux combats dans une année**, pas un bilan cumulé.
+La sélection relie les lignes par `conflict_id` + `c_ep_startyear`, sans utiliser
+`c_epid` seul. Elle retient 131 fins d'épisodes et garde les codes d'issue initiaux.
+La fin reste définie par le passage sous 25 morts dans l'année suivante.
+
 Les sorties ne sont pas des données officielles UCDP : ce sont des extractions
 et une visualisation réalisées pour ce dépôt. Les codes originaux ne sont pas
 recodés en fonction d'une interprétation historique indépendante.
