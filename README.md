@@ -31,6 +31,47 @@ uv run --locked python reproduce.py --output-dir /chemin/vers/resultats
 Le script fonctionne aussi depuis un autre répertoire : il trouve les données
 relativement à son propre emplacement, et non au répertoire courant.
 
+## Variante : guerres seulement
+
+![Terminaison des épisodes de guerre](output/fins-guerres-evolution-1946-2023.png)
+
+```sh
+uv run --locked python reproduce.py --wars-only
+```
+
+Cette option conserve les épisodes ayant atteint **au moins 1 000 morts liés aux
+combats dans une même année** (`intensity_level == 2`) pendant leur déroulement.
+Il ne s'agit ni d'un bilan cumulé ni de toutes les morts indirectes de la guerre.
+Le seuil UCDP est **≥ 1 000**, pas strictement `> 1 000` : cette variable ne permet
+pas de distinguer une année comptant exactement 1 000 morts d'une année au-dessus.
+
+Le filtre est appliqué à l'ensemble de chaque épisode, identifié par la paire
+`conflict_id` + `c_ep_startyear`. Il ne suffit pas de sélectionner la dernière
+année : cela exclurait 50 épisodes dont l'intensité avait déjà baissé. Une guerre
+ancienne ne qualifie pas automatiquement les épisodes ultérieurs du même conflit.
+
+Les mêmes catégories et périodes sont conservées. Cette variante contient
+**131 fins d'épisodes** : 42 victoires, 24 accords de paix, 22 cessez-le-feu,
+33 baisses sous le seuil d'activité et 10 transformations/disparitions d'acteur.
+Les effectifs par période sont : 13, 18, 14, 18, 17, 23, 14, 10 et 4.
+
+La fin d'épisode garde la définition UCDP : passage sous **25 morts** l'année
+suivante, et non simple passage sous 1 000. Un épisode peut donc continuer
+plusieurs années à moindre intensité avant sa terminaison codée.
+
+**Prudence sur les dernières périodes :** seulement 10 fins en 2010–2019 et
+4 en 2020–2023. Les guerres encore actives ne sont pas comptées. L'absence d'une
+catégorie dans une période n'établit pas qu'elle a disparu historiquement.
+
+Trois fichiers supplémentaires sont produits, sans écraser le premier graphique :
+
+- `output/fins-guerres-ucdp-1946-2023.csv` : épisodes retenus et codes originaux.
+- `output/fins-guerres-par-periode.csv` : effectifs et pourcentages.
+- `output/fins-guerres-evolution-1946-2023.png` : même présentation visuelle.
+
+Les explications chiffrées de la section « Ce que l'on compte » ci-dessous
+concernent la vue complète par défaut ; les limites générales valent pour les deux.
+
 ## Contenu
 
 - `reproduce.py` : extraction, agrégation, contrôle et dessin du graphique.
