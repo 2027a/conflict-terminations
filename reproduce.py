@@ -84,7 +84,7 @@ plt.rcParams.update({'font.family':'DejaVu Sans','font.size':12,'text.color':'#2
 fig = plt.figure(figsize=(13,9), facecolor='#FAF8F3')
 title = 'Comment les guerres s’interrompent' if args.wars_only else 'Comment les conflits armés s’interrompent'
 subtitle = ('Épisodes avec ≥ 1 000 morts liés aux combats en une année au moins · parts par période'
-            if args.wars_only else 'Part des épisodes terminés dans chaque période — pas part de toutes les guerres')
+            if args.wars_only else 'Part des épisodes terminés dans chaque période')
 fig.text(.07,.94,title,fontsize=25,weight='bold')
 fig.text(.07,.898,'Évolution des modes de terminaison · 1946–2023',fontsize=16,color='#53606C')
 fig.text(.07,.859,subtitle,fontsize=12)
@@ -93,7 +93,7 @@ fig.legend(handles=legend[:3],loc='upper left',bbox_to_anchor=(.064,.831),ncol=3
            columnspacing=1.9,handlelength=1.15)
 fig.legend(handles=legend[3:],loc='upper left',bbox_to_anchor=(.064,.791),ncol=2,frameon=False,fontsize=11.5,
            columnspacing=2.2,handlelength=1.15)
-ax = fig.add_axes([.085,.25,.86,.47],facecolor='#FAF8F3')
+ax = fig.add_axes([.085,.28,.86,.44],facecolor='#FAF8F3')
 ax.set_ylim(0,109)
 ax.set_xlim(-.65,len(periods)-.35)
 ax.set_yticks([0,20,40,60,80,100])
