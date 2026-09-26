@@ -1,0 +1,3 @@
+# Preserve source hashes and spreadsheet-compatible CRLF CSV outputs.
+*.csv -text whitespace=cr-at-eol
+*.png -text

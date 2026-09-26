@@ -1,0 +1,26 @@
+{
+  "dataset": "UCDP Conflict Termination Dataset",
+  "release": "4-2024",
+  "version_in_csv": [
+    "4.2024002"
+  ],
+  "source_url": "https://ucdp.uu.se/downloads/monadterm/UCDPConflictTerminationDataset_v4_2024_Conflict.csv",
+  "retrieved_at_utc": "2026-09-26T13:36:18.653189+00:00",
+  "sha256_download": "6f3a739fa5c6e23ab3dde169d0d06f139677b7a9cf5ce5b2dcb3bf3ab39f9b7d",
+  "sha256_stored": "6f3a739fa5c6e23ab3dde169d0d06f139677b7a9cf5ce5b2dcb3bf3ab39f9b7d",
+  "source_rows": 2752,
+  "termination_rows": 507,
+  "source_year_range": [
+    1946,
+    2024
+  ],
+  "termination_year_range": [
+    1946,
+    2023
+  ],
+  "storage_note": "UTF-8 text, optional input BOM removed; preserved CSV content.",
+  "license": "CC-BY-4.0",
+  "license_source": "https://ucdp.uu.se/downloads/",
+  "codebook_url": "https://ucdp.uu.se/downloads/monadterm/UCDPConflictTerminationDataset_v4_2024_Codebook.pdf",
+  "citation": "Kreutz, Joakim (2010). How and When Armed Conflicts End: Introducing the UCDP Conflict Termination Dataset. Journal of Peace Research 47(2): 243–250. https://doi.org/10.1177/0022343309353108"
+}
